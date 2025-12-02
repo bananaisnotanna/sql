@@ -1,0 +1,42 @@
+select min(age) AS 'MIN AGE', max(age) AS 'Maz Age' from Customers;
+
+--where clause
+
+select * from Customers WHERE age<=25;
+
+--and clause
+
+select * from Customers WHERE country='USA' and age <=25;
+
+--or clause
+
+select * from Customers WHERE country='USA' or age<=25
+
+--like clause; like followed by pattern
+
+select * from Customer WHERE last_name LIKE '%e%'
+
+--% means anyth before or after.
+
+--update clause
+UPDATE Customers SET first_name='Anna' WHERE customer_id=1;
+--OR
+UPDATE Customers SET first_name='Anna' WHERE first_name='John';
+
+--delete clause
+DELETE from Customers WHERE customer_id=1;
+
+--delete all clause; deletes data not structure
+DELETE from Customers;
+
+--avg clause
+
+select avg(age) AS 'AVG AGE'  from Customers;
+--same goes for count,sum
+--using it selectiviely;
+select count(country) AS 'number of ppl from USA' from Customers WHERE country='USA';
+
+--distinct clause; wont allow duplication.
+select DISTINCT age from Customers;
+
+select count(distinct age) from Customers;
