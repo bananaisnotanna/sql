@@ -1,0 +1,36 @@
+CREATE table flappy_bird(
+    id INT PRIMARY KEY,
+    name VARCHAR(50) not null,
+    score INT
+);
+
+INSERT INTO flappy_bird(id,name,score) VALUES
+(1,'player1',150),
+(2,'player2',200),
+(3,'player3',250);
+
+INSERT INTO flappy_bird(id,name,score) VALUES
+(4,'player4',300),
+(5,'player5',90);
+
+INSERT INTO flappy_bird(id,name) VALUES
+(6,'player6');
+
+INSERT INTO flappy_bird(id,name,score) VALUES
+(7,'player7',100);
+
+#if u want to add another column later
+ALTER TABLE flappy_bird ADD COLUMN email VARCHAR(50) not null DEFAULT 'abc@gmail.com';
+
+INSERT INTO flappy_bird(id,name,score) VALUES
+(8,'player8',180);
+
+INSERT INTO flappy_bird(id,name,score,email) VALUES
+(9,'player9',900,'anna15@gmail.com');
+
+UPDATE flappy_bird set score=600 where name ='player4';
+
+SELECT name,score FROM flappy_bird where score >=300;
+
+
+
