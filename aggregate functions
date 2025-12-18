@@ -1,0 +1,4 @@
+select avg(age) AS 'AVG AGE'  from Customers;
+--same goes for count,sum
+--using it selectiviely;
+select count(country) AS 'number of ppl from USA' from Customers WHERE country='USA';
