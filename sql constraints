@@ -1,0 +1,24 @@
+import sqlite3
+
+path=r"/content/database (2).sqlite"
+conn=sqlite3.connect(path)
+conn
+conn.execute("""create table if not exists codingal(
+   id integer primary key autoincrement not null,
+   name varchar(30) not null,
+   surname varchar(30) not null,
+   age int default(15)
+)""")
+conn.execute("""insert into codingal(id,name,surname,age) values(?,?,?,?)""",(1,"akash","kumar roy",28))
+id=int(input("enter id:"))
+name=input("enter name:")
+surname=input("enter name:")
+age=int(input("enter age:"))
+conn.execute("""insert into codingal(id,name,surname,age) values(?,?,?,?)""",(id,name,surname,age))
+conn.commit()
+import pandas as pd
+
+data=pd.read_sql("select * from codingal",conn)
+data
+data.info()
+data.describe()
