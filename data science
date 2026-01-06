@@ -1,0 +1,16 @@
+import numpy as np
+
+data_type = [('name', 'S15'), ('class', int), ('height', float)]
+students_details = [('James', 5, 48.5), ('Nail', 6, 52.5),('Paul', 5, 42.10),
+('Pit', 5, 40.11)]
+
+students = np.array(students_details, dtype=data_type)
+print("Original array:")
+print(students)
+print("datatype of array: ", students.dtype)
+print("total elements of array: ", students.shape)
+print("first element of array: ", students[0])
+print("last element of array: ", students[3])
+print("slicing: ", students[0:2])
+print("Sort by height")
+print(np.sort(students, order='height'))
